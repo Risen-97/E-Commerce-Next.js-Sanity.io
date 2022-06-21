@@ -6,7 +6,7 @@ const Product = ({ product }) => {
   return (
     <>
       <Head>
-        <title>MoStore - {product.name}</title>
+        <title>MoStore - {product?.name}</title>
       </Head>
       <div className="">
         <ProductDetails product={product} />
