@@ -19,7 +19,7 @@ const ProductDetails = ({ product }) => {
     <main className="2xl:h-screen flex flex-col items-center 2xl::justify-center overflow-hidden">
       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
         <div className="relative h-96 lg:h-full lg:w-full">
-          <ImageNext mySanityData={product.image[index]} />
+          <ImageNext mySanityData={product?.image[index]} />
         </div>
 
         <motion.div
@@ -39,17 +39,17 @@ const ProductDetails = ({ product }) => {
             variants={fadeInUp}
             className="text-xl lg:text-3xl my-4 font-bold capitalize"
           >
-            {product.name}
+            {product?.name}
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-sm max-w-lg leading-8">
-            {product.description}
+            {product?.description}
           </motion.p>
 
           <motion.div
             variants={fadeInUp}
             className="flex items-center w-96  h-20 overflow-hidden mt-10 gap-5"
           >
-            {product.image.map((item, idx) => {
+            {product?.image.map((item, idx) => {
               return (
                 <article
                   key={idx}
@@ -65,7 +65,7 @@ const ProductDetails = ({ product }) => {
           </motion.div>
 
           <motion.h4 variants={fadeInUp} className="text-3xl my-10">
-            ${product.price}
+            ${product?.price}
           </motion.h4>
           <motion.div variants={fadeInUp} className="flex items-center gap-10">
             <div className="grid grid-cols-3 border border-gray-400 rounded-md">
@@ -89,7 +89,7 @@ const ProductDetails = ({ product }) => {
             <button
               onClick={() => {
                 dispatch({ type: "ADD_ITEM", payload: { ...product, qty } });
-                toast.success(`${product.name} added to the cart.`);
+                toast.success(`${product?.name} added to the cart.`);
               }}
               className="bg-black text-white py-1 px-8 rounded-sm hover:bg-gray-700 transition duration-300"
             >
