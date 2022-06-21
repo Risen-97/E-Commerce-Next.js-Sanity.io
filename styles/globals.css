@@ -1,16 +1,52 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen  text-gray-700;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.navLinks {
+  @apply hover:text-gray-900 hover:underline hover:underline-offset-8 transition duration-700;
 }
 
-* {
-  box-sizing: border-box;
+.title {
+  @apply text-3xl font-bold text-center underline underline-offset-8 mb-20 text-gray-500 capitalize;
+}
+
+.darkBg {
+  @apply absolute  w-full h-full top-0 left-0 bg-black/30 z-20;
+}
+
+.curve {
+  clip-path: ellipse(276% 100% at 150.6% 0%);
+}
+
+.footerLink {
+  @apply cursor-pointer hover:underline hover:underline-offset-4;
+}
+
+.inputContact {
+  @apply border-2 border-gray-400 rounded-md py-1 px-2 outline-none;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#333, #333);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.activeNav,
+.link-underline:hover {
+  background-size: 100% 3px;
+}
+
+.spinner {
+  display: none !important;
 }
